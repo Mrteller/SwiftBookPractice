@@ -5,6 +5,7 @@
 //  Created by Paul on 15.01.2019.
 //  Copyright © 2019 Paul. All rights reserved.
 //
+//  Paul's notes: This is a chance for autolayout practice.
 
 import UIKit
 
