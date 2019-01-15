@@ -13,6 +13,7 @@
 		DA5E40D021EE41B500FA32EC /* MyCars.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA5E40CE21EE41B400FA32EC /* MyCars.xcdatamodeld */; };
 		DA5E40D221EE41B600FA32EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA5E40D121EE41B600FA32EC /* Assets.xcassets */; };
 		DA5E40D521EE41B600FA32EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5E40D321EE41B600FA32EC /* LaunchScreen.storyboard */; };
+		DA5E40DD21EE4FE200FA32EC /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA5E40DC21EE4FE200FA32EC /* data.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DA5E40D121EE41B600FA32EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA5E40D421EE41B600FA32EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA5E40D621EE41B600FA32EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA5E40DC21EE4FE200FA32EC /* data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				DA5E40CB21EE41B400FA32EC /* Main.storyboard */,
 				DA5E40D121EE41B600FA32EC /* Assets.xcassets */,
 				DA5E40D321EE41B600FA32EC /* LaunchScreen.storyboard */,
+				DA5E40DC21EE4FE200FA32EC /* data.plist */,
 				DA5E40D621EE41B600FA32EC /* Info.plist */,
 				DA5E40CE21EE41B400FA32EC /* MyCars.xcdatamodeld */,
 			);
@@ -127,6 +130,7 @@
 			files = (
 				DA5E40D521EE41B600FA32EC /* LaunchScreen.storyboard in Resources */,
 				DA5E40D221EE41B600FA32EC /* Assets.xcassets in Resources */,
+				DA5E40DD21EE4FE200FA32EC /* data.plist in Resources */,
 				DA5E40CD21EE41B400FA32EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
