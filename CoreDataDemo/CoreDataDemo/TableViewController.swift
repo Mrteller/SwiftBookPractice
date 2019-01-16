@@ -47,6 +47,21 @@ class TableViewController: UITableViewController {
             print(error.localizedDescription)
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated) // Paul's note: always give super a chance to do its job
+        // Paul's note: If you find yourself copy-pasting, it is highly likely you doing something wrong
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate // Paul's note: creating a static var is preferable
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
+        
+        do {
+            toDoItems = try context.fetch(fetchRequest)
+        } catch  {
+            print(error.localizedDescription)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -8,10 +8,12 @@
 //  Paul's notes: This is a chance for autolayout practice.
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     //Paul's notes: Much better then before. We have controller var. But we could do even better and make it static
-    lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var context: NSManagedObjectContext!
+    // lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var markLabel: UILabel!
@@ -26,6 +28,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    func getDataFromFile() {
+        let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
     }
 
     @IBAction func segmentedCtrlPressed(_ sender: UISegmentedControl) {

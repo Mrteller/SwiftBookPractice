@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+         //Paul's notes: rather dangerous
+        let vc = window?.rootViewController as! ViewController
+        vc.context = persistentContainer.viewContext
         return true
     }
 

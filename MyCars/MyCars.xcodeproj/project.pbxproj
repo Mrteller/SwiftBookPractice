@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA06562B21EF706900D3BAFA /* Car+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06562921EF706900D3BAFA /* Car+CoreDataClass.swift */; };
+		DA06562C21EF706900D3BAFA /* Car+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06562A21EF706900D3BAFA /* Car+CoreDataProperties.swift */; };
 		DA5E40C821EE41B400FA32EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E40C721EE41B400FA32EC /* AppDelegate.swift */; };
 		DA5E40CA21EE41B400FA32EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E40C921EE41B400FA32EC /* ViewController.swift */; };
 		DA5E40CD21EE41B400FA32EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5E40CB21EE41B400FA32EC /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA06562921EF706900D3BAFA /* Car+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Car+CoreDataClass.swift"; path = "MyCars/Car+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DA06562A21EF706900D3BAFA /* Car+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Car+CoreDataProperties.swift"; path = "MyCars/Car+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DA5E40C421EE41B400FA32EC /* MyCars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5E40C721EE41B400FA32EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA5E40C921EE41B400FA32EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 		DA5E40BB21EE41B400FA32EC = {
 			isa = PBXGroup;
 			children = (
+				DA06562921EF706900D3BAFA /* Car+CoreDataClass.swift */,
+				DA06562A21EF706900D3BAFA /* Car+CoreDataProperties.swift */,
 				DA5E40C621EE41B400FA32EC /* MyCars */,
 				DA5E40C521EE41B400FA32EC /* Products */,
 			);
@@ -142,6 +148,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA06562B21EF706900D3BAFA /* Car+CoreDataClass.swift in Sources */,
+				DA06562C21EF706900D3BAFA /* Car+CoreDataProperties.swift in Sources */,
 				DA5E40CA21EE41B400FA32EC /* ViewController.swift in Sources */,
 				DA5E40D021EE41B500FA32EC /* MyCars.xcdatamodeld in Sources */,
 				DA5E40C821EE41B400FA32EC /* AppDelegate.swift in Sources */,
