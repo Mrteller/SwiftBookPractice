@@ -6,6 +6,7 @@
 //  Copyright © 2019 Paul. All rights reserved.
 //
 //  Paul's notes: This is a chance for autolayout practice.
+//  All this pllist business is better done with codable
 
 import UIKit
 import CoreData
@@ -14,6 +15,11 @@ class ViewController: UIViewController {
     //Paul's notes: Much better then before. We have controller var. But we could do even better and make it static
     var context: NSManagedObjectContext!
     // lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    // https://en.wikipedia.org/wiki/Lamborghini_Murciélago
+    // https://ru.wikipedia.org/wiki/Ferrari_Enzo
+    // ...
+    // https://en.wikipedia.org/wiki/BMW_X6
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var markLabel: UILabel!
@@ -63,15 +69,46 @@ class ViewController: UIViewController {
             // What if we decide to rename class Car to Auto? It will compile and crush at some point of runtime
             let car = NSManagedObject(entity: entity!, insertInto: context) as! Car
             let carDictionary = dictionary as! NSDictionary
+            
+            car.mark = carDictionary["mark"] as? String
+            car.model = carDictionary["model"] as? String
+            car.rating = carDictionary["rating"] as! Double // as? NSNumber
+            car.lastStarted = carDictionary["lastStarted"] as? NSDate
+            car.timesDriven = carDictionary["timesDriven"] as! Int16
+            car.myChoice = carDictionary["myChoice"] as! Bool
+            
+            if let imageName = carDictionary["imageName"] as? String, let url = URL(string: imageName) {
+                if let imageDataFromURL = try? Data(contentsOf: url), let image = UIImage(data: imageDataFromURL) {
+                    //let imageDataAsPNG2 = UIImagePNGRepresentation(image) // deprecated
+                    let imageData = image.pngData() // Recompress data
+                    car.imageData = NSData(data: imageData!)
+                }
+                
+            }
+            if let colorDictionary = carDictionary["tintColor"] as? NSDictionary {
+                car.tintColor = getColor(colorDictionary: colorDictionary)
+            }
+            
         }
+    }
+    
+    private func getColor(colorDictionary: NSDictionary) -> UIColor {
+        let red = colorDictionary["red"] as! NSNumber
+        let green = colorDictionary["green"] as! NSNumber
+        let blue = colorDictionary["blue"] as! NSNumber
+        
+        return UIColor(red: CGFloat(red)/255, green: CGFloat(green)/255, blue: CGFloat(blue)/255, alpha: 1)
     }
 
     @IBAction func segmentedCtrlPressed(_ sender: UISegmentedControl) {
+        
     }
     
     @IBAction func startEnginePressed(_ sender: UIButton) {
+        
     }
     @IBAction func rateItPressed(_ sender: UIButton) {
+        
     }
 }
 
