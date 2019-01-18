@@ -7,6 +7,10 @@
 //
 //  Paul's notes: This is a chance for autolayout practice.
 //  All this pllist business is better done with codable
+//  Paul's TODO:
+//  Make sure to check all those "!" "as!" and "as?" - make use of guard, assert, inits, convert funcs
+//  Refine data model and consider making entity attributes non-optional. Think about scalar vs ref types.
+
 
 import UIKit
 import CoreData
@@ -15,6 +19,8 @@ class ViewController: UIViewController {
     //Paul's notes: Much better then before. We have controller var. But we could do even better and make it static
     var context: NSManagedObjectContext!
     // lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var selectedCar: Car! //Paul's notes: better use regulal Optional without implicit unwrapping
     
     // https://en.wikipedia.org/wiki/Lamborghini_Murciélago
     // https://ru.wikipedia.org/wiki/Ferrari_Enzo
@@ -33,7 +39,41 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        getDataFromFile()
+        let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
+        let mark = segmentedControl.titleForSegment(at: 0) // Paul's note: to keep thing in sync it is better to do titleForSegment(at: segmentedControl.selectedSegmentIndex)
+        debugPrint("mark \(mark ?? "unknown")")
+        fetchRequest.predicate = NSPredicate(format: "mark == %@", mark!)
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            selectedCar = results[0] // Paul's note: If we fetch nothing (fetch fails or no rows mathching the predice, results[0] will crash the app
+            // Paul's note: line above can be replaced with the following
+            // assert(results.count == 1, "Returned unexpexted number of rows for Car")
+            // selectedCar = results.first!// we can safely unwrap because we know we have exactly one element
+            insertDataFrom(selectedCar: selectedCar)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    func insertDataFrom(selectedCar: Car) {
+        // Paul's note: UI updating stuff is better incaplulated in a dedicated func
+        // carImageView.image = UIImage(data: selectedCar.imageData as! data)
+        if let carImageData = selectedCar.imageData  {
+            carImageView.image = UIImage(data: carImageData as Data)
+        }
+        markLabel.text = selectedCar.model
+        myChoiceImageView.isHidden = !selectedCar.myChoice  // replaced with scalar value type
+        ratingsLabel.text = "Rating: \(selectedCar.rating/10.0)" // replaced with scalar value type
+        numberOfTripsLabel.text = "Number of trips: \(selectedCar.timesDriven)"
+        
+        let df = DateFormatter()
+        df.dateStyle = .short
+        df.timeStyle = .none
+        lastTimeStartedLabel.text = "Last time started: \(df.string(from: (selectedCar.lastStarted! as Date)))"
+        segmentedControl.tintColor = (selectedCar.tintColor as? UIColor) // Paul's note: there might be more elegant way to work with Transformable. "as?" is just much more appropriate here.
     }
     func getDataFromFile() {
         let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
@@ -90,13 +130,19 @@ class ViewController: UIViewController {
             }
             
         }
+        // Paul's note: Instructor seems to have forgotten to save context
+        do {
+            try context.save()
+        } catch  {
+            print(error.localizedDescription)
+        }
     }
     
     private func getColor(colorDictionary: NSDictionary) -> UIColor {
         let red = colorDictionary["red"] as! NSNumber
         let green = colorDictionary["green"] as! NSNumber
         let blue = colorDictionary["blue"] as! NSNumber
-        
+
         return UIColor(red: CGFloat(red)/255, green: CGFloat(green)/255, blue: CGFloat(blue)/255, alpha: 1)
     }
 

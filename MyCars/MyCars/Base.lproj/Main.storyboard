@@ -85,7 +85,7 @@
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="uFK-Y3-51A"/>
                                         </constraints>
                                         <segments>
-                                            <segment title="Lambo"/>
+                                            <segment title="Lamborgini"/>
                                             <segment title="Ferrari"/>
                                             <segment title="Mercedes"/>
                                             <segment title="Nissan"/>
