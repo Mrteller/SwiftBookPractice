@@ -39,7 +39,7 @@
 			<key>blue</key>
 			<integer>0</integer>
 			<key>red</key>
-			<integer>20</integer>
+			<integer>200</integer>
 		</dict>
 		<key>mark</key>
 		<string>Ferrari</string>
@@ -60,7 +60,7 @@
 		<key>tintColor</key>
 		<dict>
 			<key>green</key>
-			<integer>20</integer>
+			<integer>200</integer>
 			<key>blue</key>
 			<integer>0</integer>
 			<key>red</key>
@@ -73,7 +73,7 @@
 		<key>lastStarted</key>
 		<date>2016-10-16T18:46:43Z</date>
 		<key>imageName</key>
-		<string></string>
+		<string>https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/2018_Nissan_Pathfinder_%28R52_MY18%29_ST-L_wagon_%282018-09-28%29_01.jpg/640px-2018_Nissan_Pathfinder_%28R52_MY18%29_ST-L_wagon_%282018-09-28%29_01.jpg</string>
 		<key>timesDriven</key>
 		<integer>7</integer>
 	</dict>
@@ -85,20 +85,20 @@
 		<key>tintColor</key>
 		<dict>
 			<key>green</key>
-			<integer>40</integer>
+			<integer>200</integer>
 			<key>blue</key>
-			<integer>40</integer>
+			<integer>200</integer>
 			<key>red</key>
-			<integer>40</integer>
+			<integer>200</integer>
 		</dict>
 		<key>mark</key>
-		<string>Mersedes</string>
+		<string>Mercedes</string>
 		<key>model</key>
 		<string>GL</string>
 		<key>lastStarted</key>
 		<date>2016-10-16T18:46:43Z</date>
 		<key>imageName</key>
-		<string>https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Mercedes-Benz_GL_350_BlueTEC_4MATIC_Sport-Paket_AMG_%28X_166%29_–_Frontansicht%2C_31._Dezember_2012%2C_Düsseldorf.jpg/1280px-Mercedes-Benz_GL_350_BlueTEC_4MATIC_Sport-Paket_AMG_%28X_166%29_–_Frontansicht%2C_31._Dezember_2012%2C_Düsseldorf.jpg</string>
+		<string>https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Mercedes_GL_450_CDI_4MATIC_%28X164%29_Facelift_front_20100926.jpg/640px-Mercedes_GL_450_CDI_4MATIC_%28X164%29_Facelift_front_20100926.jpg</string>
 		<key>timesDriven</key>
 		<integer>7</integer>
 	</dict>
@@ -110,11 +110,11 @@
 		<key>tintColor</key>
 		<dict>
 			<key>green</key>
-			<integer>40</integer>
+			<integer>80</integer>
 			<key>blue</key>
-			<integer>40</integer>
+			<integer>80</integer>
 			<key>red</key>
-			<integer>40</integer>
+			<integer>80</integer>
 		</dict>
 		<key>mark</key>
 		<string>BMW</string>

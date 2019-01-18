@@ -39,6 +39,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        myChoiceImageView.image = UIImage(imageLiteralResourceName: "checkmark")
         getDataFromFile()
         let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
         let mark = segmentedControl.titleForSegment(at: 0) // Paul's note: to keep thing in sync it is better to do titleForSegment(at: segmentedControl.selectedSegmentIndex)
@@ -63,10 +64,13 @@ class ViewController: UIViewController {
         // carImageView.image = UIImage(data: selectedCar.imageData as! data)
         if let carImageData = selectedCar.imageData  {
             carImageView.image = UIImage(data: carImageData as Data)
+        } else {
+            carImageView.image = nil
         }
-        markLabel.text = selectedCar.model
+        markLabel.text = selectedCar.mark
+        modelLabel.text = selectedCar.model
         myChoiceImageView.isHidden = !selectedCar.myChoice  // replaced with scalar value type
-        ratingsLabel.text = "Rating: \(selectedCar.rating/10.0)" // replaced with scalar value type
+        ratingsLabel.text = "Rating: \(selectedCar.rating) / 10.0" // replaced with scalar value type
         numberOfTripsLabel.text = "Number of trips: \(selectedCar.timesDriven)"
         
         let df = DateFormatter()
@@ -130,7 +134,8 @@ class ViewController: UIViewController {
             }
             
         }
-        // Paul's note: Instructor seems to have forgotten to save context
+        // Paul's note: Instructor seems to have forgotten to save context?
+        // Use saveContext from AppDelegate or maybe now it is all autosaved
         do {
             try context.save()
         } catch  {
@@ -139,7 +144,7 @@ class ViewController: UIViewController {
     }
     
     private func getColor(colorDictionary: NSDictionary) -> UIColor {
-        let red = colorDictionary["red"] as! NSNumber
+        let red = colorDictionary["red"] as! NSNumber // Paul's note: as CGFloat right away
         let green = colorDictionary["green"] as! NSNumber
         let blue = colorDictionary["blue"] as! NSNumber
 
@@ -147,14 +152,61 @@ class ViewController: UIViewController {
     }
 
     @IBAction func segmentedCtrlPressed(_ sender: UISegmentedControl) {
-        
+        let mark = sender.titleForSegment(at: sender.selectedSegmentIndex) // Paul's note: "if let"
+        let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "mark == %@", mark!)
+        do {
+            let results = try context.fetch(fetchRequest)
+            selectedCar = results[0] // Paul's note: check count, use ".first"
+            insertDataFrom(selectedCar: selectedCar)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     @IBAction func startEnginePressed(_ sender: UIButton) {
+        let timesDriven = selectedCar.timesDriven
+        selectedCar.timesDriven = timesDriven + 1 // No NSNumber, no optionality due to scalar types
+        // Paul's note: can be done with oneliner:
+        // selectedCar.timesDriven += 1
+        selectedCar.lastStarted = NSDate()
         
+        do { // Paul's note: incapsulate into a function - it will called from several places obviously
+            try context.save()
+            insertDataFrom(selectedCar: selectedCar) // Paul's note: property observers exist for this
+        } catch  {
+            print(error.localizedDescription)
+        }
     }
+    
     @IBAction func rateItPressed(_ sender: UIButton) {
-        
+        let ac = UIAlertController(title: "Rate it", message: "Rate this car please", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+            let textField =  ac.textFields?[0] // Paul's note: ac.textFields?.first is more error prone. "if let" wants to be here instad of "let"
+            self.update(rating: (textField?.text)!)
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .default)
+        ac.addTextField { textField in
+            textField.keyboardType = .numberPad
+        }
+        ac.addAction(ok)
+        ac.addAction(cancel)
+        present(ac, animated: true)
+    }
+    
+    func update(rating: String) {
+        selectedCar.rating = Double(rating)!
+        do { // Paul's note: incapsulate into a function - it will called from several places obviously
+            try context.save()
+            insertDataFrom(selectedCar: selectedCar) // Paul's note: property observers exist for this
+        } catch  {
+            let ac = UIAlertController(title: "Wrong value", message: "Wrong", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default)
+            ac.addAction(ok)
+            present(ac, animated: true)
+            
+            print(error.localizedDescription)
+        }
     }
 }
 
