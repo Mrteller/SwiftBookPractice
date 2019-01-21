@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var array = [Date]()
     
-    // Paul's note: well done! Init with closure, correct lazy usage
+    // Paul's note: well done! Init with closure, correct lazy  usage
     lazy var dateFormatter: DateFormatter  = {
         let formatter = DateFormatter()
         formatter.dateStyle = .short

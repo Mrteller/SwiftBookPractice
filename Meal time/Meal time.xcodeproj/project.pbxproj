@@ -14,6 +14,10 @@
 		DAC24F3521F4BFC3004E5B57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAC24F3421F4BFC3004E5B57 /* Assets.xcassets */; };
 		DAC24F3821F4BFC3004E5B57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC24F3621F4BFC3004E5B57 /* LaunchScreen.storyboard */; };
 		DAC24F4021F4C895004E5B57 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC24F3F21F4C895004E5B57 /* CoreDataStack.swift */; };
+		DAC24F4521F620D8004E5B57 /* Meal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC24F4121F620D8004E5B57 /* Meal+CoreDataClass.swift */; };
+		DAC24F4621F620D8004E5B57 /* Meal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC24F4221F620D8004E5B57 /* Meal+CoreDataProperties.swift */; };
+		DAC24F4721F620D8004E5B57 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC24F4321F620D8004E5B57 /* Person+CoreDataClass.swift */; };
+		DAC24F4821F620D8004E5B57 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC24F4421F620D8004E5B57 /* Person+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		DAC24F3721F4BFC3004E5B57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAC24F3921F4BFC3004E5B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAC24F3F21F4C895004E5B57 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		DAC24F4121F620D8004E5B57 /* Meal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Meal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DAC24F4221F620D8004E5B57 /* Meal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Meal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DAC24F4321F620D8004E5B57 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DAC24F4421F620D8004E5B57 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,7 @@
 		DAC24F1E21F4BFC0004E5B57 = {
 			isa = PBXGroup;
 			children = (
+				DAC24F4921F621F4004E5B57 /* CoreDataEntities */,
 				DAC24F2921F4BFC0004E5B57 /* Meal time */,
 				DAC24F2821F4BFC0004E5B57 /* Products */,
 			);
@@ -68,6 +77,17 @@
 				DAC24F3121F4BFC0004E5B57 /* Meal_time.xcdatamodeld */,
 			);
 			path = "Meal time";
+			sourceTree = "<group>";
+		};
+		DAC24F4921F621F4004E5B57 /* CoreDataEntities */ = {
+			isa = PBXGroup;
+			children = (
+				DAC24F4121F620D8004E5B57 /* Meal+CoreDataClass.swift */,
+				DAC24F4221F620D8004E5B57 /* Meal+CoreDataProperties.swift */,
+				DAC24F4321F620D8004E5B57 /* Person+CoreDataClass.swift */,
+				DAC24F4421F620D8004E5B57 /* Person+CoreDataProperties.swift */,
+			);
+			path = CoreDataEntities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +162,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAC24F2D21F4BFC0004E5B57 /* ViewController.swift in Sources */,
+				DAC24F4721F620D8004E5B57 /* Person+CoreDataClass.swift in Sources */,
 				DAC24F2B21F4BFC0004E5B57 /* AppDelegate.swift in Sources */,
+				DAC24F4621F620D8004E5B57 /* Meal+CoreDataProperties.swift in Sources */,
+				DAC24F4821F620D8004E5B57 /* Person+CoreDataProperties.swift in Sources */,
 				DAC24F3321F4BFC0004E5B57 /* Meal_time.xcdatamodeld in Sources */,
 				DAC24F4021F4C895004E5B57 /* CoreDataStack.swift in Sources */,
+				DAC24F4521F620D8004E5B57 /* Meal+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
