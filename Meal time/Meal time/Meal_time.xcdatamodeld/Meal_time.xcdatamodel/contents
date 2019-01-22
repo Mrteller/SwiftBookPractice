@@ -4,12 +4,12 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="meals" inverseEntity="Person" syncable="YES"/>
     </entity>
-    <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
+    <entity name="Person" representedClassName="Person" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="meals" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Meal" inverseName="person" inverseEntity="Meal" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Person" positionX="-407.3671875" positionY="304.6796875" width="128" height="75"/>
         <element name="Meal" positionX="-209.15234375" positionY="309.359375" width="128" height="75"/>
+        <element name="Person" positionX="-407.3671875" positionY="304.6796875" width="128" height="75"/>
     </elements>
 </model>

@@ -36,7 +36,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="My happy meal time" id="W3T-R6-UtP">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="IMf-Ch-B84"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="IMf-Ch-B84">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="bPa-2x-JFi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="axj-Tt-g40" id="NOh-Pq-ayk"/>
