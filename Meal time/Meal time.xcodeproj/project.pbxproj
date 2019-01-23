@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA7D8A1821F8E01000D063CE /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8A1421F8E01000D063CE /* Person+CoreDataClass.swift */; };
+		DA7D8A1921F8E01000D063CE /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8A1521F8E01000D063CE /* Person+CoreDataProperties.swift */; };
+		DA7D8A1A21F8E01000D063CE /* Meal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8A1621F8E01000D063CE /* Meal+CoreDataClass.swift */; };
+		DA7D8A1B21F8E01000D063CE /* Meal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8A1721F8E01000D063CE /* Meal+CoreDataProperties.swift */; };
 		DAC24F2B21F4BFC0004E5B57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC24F2A21F4BFC0004E5B57 /* AppDelegate.swift */; };
 		DAC24F2D21F4BFC0004E5B57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC24F2C21F4BFC0004E5B57 /* ViewController.swift */; };
 		DAC24F3021F4BFC0004E5B57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC24F2E21F4BFC0004E5B57 /* Main.storyboard */; };
@@ -14,13 +18,14 @@
 		DAC24F3521F4BFC3004E5B57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAC24F3421F4BFC3004E5B57 /* Assets.xcassets */; };
 		DAC24F3821F4BFC3004E5B57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC24F3621F4BFC3004E5B57 /* LaunchScreen.storyboard */; };
 		DAC24F4021F4C895004E5B57 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC24F3F21F4C895004E5B57 /* CoreDataStack.swift */; };
-		DAC24F4521F620D8004E5B57 /* Meal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC24F4121F620D8004E5B57 /* Meal+CoreDataClass.swift */; };
-		DAC24F4621F620D8004E5B57 /* Meal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC24F4221F620D8004E5B57 /* Meal+CoreDataProperties.swift */; };
-		DAC24F4721F620D8004E5B57 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC24F4321F620D8004E5B57 /* Person+CoreDataClass.swift */; };
-		DAC24F4821F620D8004E5B57 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC24F4421F620D8004E5B57 /* Person+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA7D89F721F8D74000D063CE /* Meal_time 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Meal_time 2.xcdatamodel"; sourceTree = "<group>"; };
+		DA7D8A1421F8E01000D063CE /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Person+CoreDataClass.swift"; path = "CoreDataEntities/Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DA7D8A1521F8E01000D063CE /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Person+CoreDataProperties.swift"; path = "CoreDataEntities/Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DA7D8A1621F8E01000D063CE /* Meal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Meal+CoreDataClass.swift"; path = "CoreDataEntities/Meal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DA7D8A1721F8E01000D063CE /* Meal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Meal+CoreDataProperties.swift"; path = "CoreDataEntities/Meal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DAC24F2721F4BFC0004E5B57 /* Meal time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meal time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC24F2A21F4BFC0004E5B57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAC24F2C21F4BFC0004E5B57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,10 +35,6 @@
 		DAC24F3721F4BFC3004E5B57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAC24F3921F4BFC3004E5B57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAC24F3F21F4C895004E5B57 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		DAC24F4121F620D8004E5B57 /* Meal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Meal+CoreDataClass.swift"; sourceTree = "<group>"; };
-		DAC24F4221F620D8004E5B57 /* Meal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Meal+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		DAC24F4321F620D8004E5B57 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
-		DAC24F4421F620D8004E5B57 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +51,10 @@
 		DAC24F1E21F4BFC0004E5B57 = {
 			isa = PBXGroup;
 			children = (
+				DA7D8A1421F8E01000D063CE /* Person+CoreDataClass.swift */,
+				DA7D8A1521F8E01000D063CE /* Person+CoreDataProperties.swift */,
+				DA7D8A1621F8E01000D063CE /* Meal+CoreDataClass.swift */,
+				DA7D8A1721F8E01000D063CE /* Meal+CoreDataProperties.swift */,
 				DAC24F4921F621F4004E5B57 /* CoreDataEntities */,
 				DAC24F2921F4BFC0004E5B57 /* Meal time */,
 				DAC24F2821F4BFC0004E5B57 /* Products */,
@@ -82,10 +87,6 @@
 		DAC24F4921F621F4004E5B57 /* CoreDataEntities */ = {
 			isa = PBXGroup;
 			children = (
-				DAC24F4121F620D8004E5B57 /* Meal+CoreDataClass.swift */,
-				DAC24F4221F620D8004E5B57 /* Meal+CoreDataProperties.swift */,
-				DAC24F4321F620D8004E5B57 /* Person+CoreDataClass.swift */,
-				DAC24F4421F620D8004E5B57 /* Person+CoreDataProperties.swift */,
 			);
 			path = CoreDataEntities;
 			sourceTree = "<group>";
@@ -162,11 +163,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAC24F2D21F4BFC0004E5B57 /* ViewController.swift in Sources */,
-				DAC24F4721F620D8004E5B57 /* Person+CoreDataClass.swift in Sources */,
 				DAC24F2B21F4BFC0004E5B57 /* AppDelegate.swift in Sources */,
-				DAC24F4621F620D8004E5B57 /* Meal+CoreDataProperties.swift in Sources */,
-				DAC24F4821F620D8004E5B57 /* Person+CoreDataProperties.swift in Sources */,
-				DAC24F4521F620D8004E5B57 /* Meal+CoreDataClass.swift in Sources */,
+				DA7D8A1B21F8E01000D063CE /* Meal+CoreDataProperties.swift in Sources */,
+				DA7D8A1A21F8E01000D063CE /* Meal+CoreDataClass.swift in Sources */,
+				DA7D8A1921F8E01000D063CE /* Person+CoreDataProperties.swift in Sources */,
+				DA7D8A1821F8E01000D063CE /* Person+CoreDataClass.swift in Sources */,
 				DAC24F3321F4BFC0004E5B57 /* Meal_time.xcdatamodeld in Sources */,
 				DAC24F4021F4C895004E5B57 /* CoreDataStack.swift in Sources */,
 			);
@@ -371,9 +372,10 @@
 		DAC24F3121F4BFC0004E5B57 /* Meal_time.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				DA7D89F721F8D74000D063CE /* Meal_time 2.xcdatamodel */,
 				DAC24F3221F4BFC0004E5B57 /* Meal_time.xcdatamodel */,
 			);
-			currentVersion = DAC24F3221F4BFC0004E5B57 /* Meal_time.xcdatamodel */;
+			currentVersion = DA7D89F721F8D74000D063CE /* Meal_time 2.xcdatamodel */;
 			path = Meal_time.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

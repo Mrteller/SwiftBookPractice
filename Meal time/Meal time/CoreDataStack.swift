@@ -21,6 +21,38 @@ class CoreDataStack  {
          error conditions that could cause the creation of the store to fail.
          */
         let container = NSPersistentContainer(name: "Meal_time")
+        let persistentStoreCoordinator = container.persistentStoreCoordinator
+        // begin code to optimize
+        let fileManager = FileManager.default
+        let storeName = "\(container.name).sqlite"
+        
+        let documentsDirectoryURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        
+        let persistentStoreURL = documentsDirectoryURL.appendingPathComponent(storeName)
+        
+        // end code to optimize
+        do {
+            let options = [ NSInferMappingModelAutomaticallyOption : true,
+                            NSMigratePersistentStoresAutomaticallyOption : true]
+            
+            try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType,
+                                                              configurationName: nil,
+                                                              at: persistentStoreURL,
+                                                              options: options)
+        } catch {
+            fatalError("Unable to Load Persistent Store")
+        }
+        
+//        // begin migration support block
+//        let description = NSPersistentStoreDescription()
+//        description.shouldMigrateStoreAutomatically = true
+//        description.shouldInferMappingModelAutomatically = true
+//        container.persistentStoreDescriptions =  [description]
+//        // end migration support block
+        
+        // ! All the code above should be made more consize with
+        //persistentStoreCoordinator.migratePersistentStore(<#T##store: NSPersistentStore##NSPersistentStore#>, to: <#T##URL#>, options: <#T##[AnyHashable : Any]?#>, withType: <#T##String#>)
+        
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
