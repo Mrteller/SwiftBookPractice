@@ -82,7 +82,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         // Paul's note: we could just do it much more efficient and natural
         // person.addToMeals(meal) // or even more flexible if we wanted sorting or adding at the beginning
         // person.insertIntoMeals(meal, at: 0)
-        // Paul's note: We have a func saveContext - why do we repeat ouselves
+        // Paul's note: We have a func saveContext - why do we repeat ouselves?
         do {
             try context.save()
         } catch let error as NSError {
@@ -92,6 +92,24 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         tableView.reloadData()
     }
-    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard let mealToDelete = person.meals?[indexPath.row] as? Meal, editingStyle == .delete else {return}
+        context.delete(mealToDelete)
+        // Paul's note: better way to do the same
+        // person.removeFromMeals(mealToDelete)
+        // Paul's note: or we could do it in one line and avoid typecasting and optionality:
+        // person.removeFromMeals(at: indexPath.row)
+        // Paul's note: We have a func saveContext - why do we repeat ouselves?
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print("Error: \(error), userInfo \(error.userInfo)")
+            return // Paul's note: need to add return here to maintain consistensy between DB and tableView
+        }
+        tableView.deleteRows(at: [indexPath], with: .automatic) // Paul's note: deleteRows doesn't trow, so we can move it out of try-catch block
+    }
 }
 
